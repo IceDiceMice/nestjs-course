@@ -1,4 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+import { IsString } from 'class-validator';
+
 export class AuthDto {
-  email: string;
+  @IsString()
+  login: string;
+  @IsString()
   passwordHash: string;
 }
