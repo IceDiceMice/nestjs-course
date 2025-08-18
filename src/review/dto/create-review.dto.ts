@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { IsString, IsNumber, Max, Min } from 'class-validator';
 
 export class CreateReviewDto {
