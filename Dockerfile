@@ -1,10 +1,10 @@
-FROM node:14-alpine
+FROM node:18-alpine
 WORKDIR /opt/app
-ADD package.json package.json
+COPY package*.json ./
 RUN npm install
 
 ADD . .
 
 RUN npm run build
-RUN npm prune --prodiction
-CMD ["node", '.dist/main.js']
+RUN npm prune --production
+CMD ["node", './dist/main.js']

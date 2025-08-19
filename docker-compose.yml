@@ -1,5 +1,20 @@
 version: '3'
+
 services:
+  app:
+    image: top-api:latest
+    container_name: top-api
+    restart: always
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+      - MONGO_HOST=mongo
+    volumes:
+      - ./.env:/opt/app/.env
+      - ./logs:/opt/app/logs
+    depends_on:
+      - mongo
   mongo:
     image: mongo:4.4.4
     container_name: mongo
@@ -12,3 +27,6 @@ services:
     volumes:
       - ./mongo-data-4.4:/data/db
     command: --wiredTigerCacheSizeGB 1.5
+
+volumes:
+  mongo-data:
