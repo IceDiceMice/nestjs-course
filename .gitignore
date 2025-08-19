@@ -3,6 +3,7 @@
 /node_modules
 /build
 /mongo-data-4.4
+/uploads
 
 # Logs
 logs
