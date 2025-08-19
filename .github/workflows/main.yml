@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}/nestjs-course:develop
+          tags: ghcr.io/icedicemice/nestjs-course:develop
